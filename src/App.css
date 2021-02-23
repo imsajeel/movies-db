@@ -22,9 +22,11 @@ input[type="text"]:focus {
 
 .autocomplete-box {
   /* margin-top: 2px; */
+  position: absolute;
   padding: 10px;
   color: rgb(209, 209, 209);
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(58, 58, 58, 0.7);
+  min-width: 300px;
   border-radius: 0px 0px 5px 5px;
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
@@ -36,4 +38,40 @@ input[type="text"]:focus {
 .autocomplete-box li:hover {
   color: white;
   cursor: pointer;
+}
+
+.movie-card {
+  width: 90%;
+  max-width: 200px;
+  /* max-height: 350px; */
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  transition: all linear 100ms;
+  cursor: default;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+}
+
+.movie-card:active {
+  transform: scale(1);
+}
+
+.movie-card > .card-cover {
+  min-height: 200px;
+  background-image: url("https://via.placeholder.com/200x250.png/000000/FFFFFF?text=movie+cover");
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  background-color: black;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.movie-card > .card-cover > img {
+  width: 100%;
+  width: 100%;
 }

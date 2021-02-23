@@ -8,7 +8,7 @@ type LayoutProps = {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="bg-black min-h-screen overflow-x-hidden w-screen flex flex-col ">
+    <div className="bg-black max-w-full min-h-screen overflow-x-hidden w-screen flex flex-col ">
       <Header />
 
       <main className="flex-grow text-white min-h-full">{children}</main>

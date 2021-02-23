@@ -1,4 +1,5 @@
 import React, { Dispatch, ReactElement, SetStateAction, useState } from "react";
+import { Link } from "react-router-dom";
 import { fetchSearchData, MovieData } from "../../API";
 
 const SearchBox = ({
@@ -36,8 +37,12 @@ const SearchBox = ({
           }}
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              setMovieCardsData(moviesData);
-              setMoviesData([]);
+              setMovieCardsData([]);
+              setTimeout(() => {
+                setMovieCardsData(moviesData);
+
+                setMoviesData([]);
+              }, 300);
             }
           }}
         />
@@ -46,9 +51,9 @@ const SearchBox = ({
       {!!moviesData[0] && (
         <div className="autocomplete-box">
           {moviesData.map((movie, i) => (
-            <li key={i} onClick={() => console.log(movie.imdbID)}>
-              {movie.Title}
-            </li>
+            <Link key={i} to={`/movies/id=${movie.imdbID}`}>
+              <li>{movie.Title}</li>
+            </Link>
           ))}
         </div>
       )}

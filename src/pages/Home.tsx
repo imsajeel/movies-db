@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { fetchSearchData, MovieData } from "../API";
+import MovieCardList from "../components/MovieCardList/MovieCardList";
 import SearchBox from "../components/SearchBox/SearchBox";
 
 const Home = () => {
@@ -24,15 +25,7 @@ const Home = () => {
           </button>
         }
       />
-      <div>
-        {movieCardsData[0] && (
-          <div className="bg-red-500">
-            {movieCardsData.map((movie, i) => (
-              <li key={i}>{movie.Title}</li>
-            ))}
-          </div>
-        )}
-      </div>
+      <div>{movieCardsData[0] && <MovieCardList data={movieCardsData} />}</div>
     </div>
   );
 };
